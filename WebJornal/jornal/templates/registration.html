@@ -1,0 +1,16 @@
+{% extends "generic_log.html" %}
+{% block content %}
+    <h1>Регистрация</h1>
+    <form method="post" action="{% url 'jornal:signup' %}">
+            {% csrf_token %}
+            {{ form }}
+        <input type="submit" value="Регистрация" />
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+    <form method="post" action="{% url 'jornal:login' %}">
+        {% csrf_token %}
+        <input type="submit" value="Войти" />
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+
+{% endblock %}

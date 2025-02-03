@@ -1,0 +1,12 @@
+{% extends "entrance_jornal.html" %}
+
+{% block content %}
+<ul>
+<li><p>Нажмите кнопку 'Добавить' для добавления учебного материала</p></li>
+<li><form method="post" action="{% url 'jornal:educational_material_add' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Добавить" />
+</form></li>
+</ul>
+    {% endblock %}

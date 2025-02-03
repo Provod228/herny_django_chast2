@@ -1,0 +1,14 @@
+{% extends "generic_log.html" %}
+
+{% block content %}
+<p>Нажмите кнопку 'регистрация' для регистрации</p>
+<form method="post" action="{% url 'jornal:signup' %}">
+    {% csrf_token %}
+    <button type="submit">регистрация</button>
+</form>
+<p>Нажмите кнопку 'войти' для входа</p>
+<form method="post" action="{% url 'jornal:login' %}">
+    {% csrf_token %}
+    <button type="submit">войти</button>
+</form>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "entrance_jornal.html" %}
+{% block content %}
+<ul>
+{% for material in educational_materials %}
+    <li>
+        {{ material.title }}
+    {{ material.summary }}
+    {{ material.subject }}
+        {% if user.is_authenticated %}
+            <form method="post" action="{% url 'jornal:delete_educational_material' material.id %}">
+                {% csrf_token %}
+               <button type="submit">Удалить материал</button>
+            </form>
+            <a href="{% url 'jornal:download_material' material.id %}">Скачать материал</a>
+        {% endif %}
+    </li>
+{% endfor %}
+</ul>
+{% if user.is_authenticated %}
+<form method="get" action="{% url 'jornal:educational_material_add' %}">
+    <input type="submit" value="Добавить материал" />
+</form>
+{% else %}
+<form method="post" action="{% url 'jornal:logout' %}">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-link">Войдите в журнал чтобы скачать</button>
+</form>
+{% endif %}
+{% endblock %}
