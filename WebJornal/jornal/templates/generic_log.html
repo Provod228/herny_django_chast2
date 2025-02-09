@@ -7,6 +7,117 @@
     <link rel="stylesheet" href="/static/CSS/styles.css">
     <link href="/snowFlakes/snow.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/gh/Alaev-Co/snowflakes/dist/snow.min.css" rel="stylesheet">
+    <style>
+            /* Базовые стили */
+            body {
+                margin: 0;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(135deg, #add8e6 0%, #b0e2ff 100%); /* Светло-голубой градиент */
+                color: #222;
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                overflow: hidden;
+            }
+
+            /* Основной контент */
+            .content {
+                background: rgba(176, 196, 222, 0.8); /* Светло-серый с оттенком синего */
+                color: #222;
+                padding: 40px;
+                border-radius: 20px;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+                width: 90%;
+                max-width: 500px;
+                position: relative;
+                z-index: 2;
+                backdrop-filter: blur(10px);
+                animation: fadeIn 0.5s ease-out;
+            }
+
+            /* Анимация появления */
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Заголовки */
+            h1, h2, h3 {
+                color: #1e90ff; /* Яркий голубой */
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            /* Формы */
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            /* Поля ввода */
+            input:not([type="submit"]) {
+                padding: 15px;
+                border: 2px solid #87cefa; /* Светло-голубой */
+                border-radius: 10px;
+                font-size: 16px;
+                transition: all 0.3s ease;
+            }
+
+            input:focus:not([type="submit"]) {
+                border-color: #1e90ff; /* Яркий голубой */
+                box-shadow: 0 0 8px rgba(30, 144, 255, 0.2);
+                outline: none;
+            }
+
+            /* Кнопки */
+            input[type="submit"] {
+                background: linear-gradient(45deg, #87cefa, #add8e6); /* Светло-голубой */
+                color: #222;
+                padding: 15px 30px;
+                border: none;
+                border-radius: 10px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+
+            input[type="submit"]:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            /* Сообщения об ошибках */
+            .errorlist {
+                color: #e74c3c;
+                list-style: none;
+                padding: 0;
+                margin: -10px 0 10px;
+                font-size: 14px;
+            }
+
+            /* Ссылки */
+            a {
+                color: #1e90ff; /* Яркий голубой */
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            a:hover {
+                color: #4682b4;
+                text-decoration: underline;
+            }
+        </style>
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/gh/Alaev-Co/snowflakes/dist/Snow.min.js"></script>

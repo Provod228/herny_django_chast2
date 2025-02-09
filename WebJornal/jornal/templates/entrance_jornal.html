@@ -7,53 +7,222 @@
     <link rel="stylesheet" href="/static/CSS/styles.css">
      <link href="/snowFlakes/snow.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/gh/Alaev-Co/snowflakes/dist/snow.min.css" rel="stylesheet">
-    <style>
-         body {
-            margin: 0;
-            font-family: sans-serif;
-            display: flex;
-             background-color: #f4f4f4;
-        }
+        <style>
+            body {
+                margin: 0;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                display: flex;
+                background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); /* Темный синий градиент */
+                color: #ecf0f1; /* Светло-серый текст */
+                overflow: hidden;
+            }
 
-        .sidebar {
-            width: 200px;
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            height: 100vh; /* высота на весь экран */
-            position: fixed; /*фиксированная навигация*/
-            top: 0;
-            left: 0;
-        }
+            body::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+                z-index: -1;
+                animation: animateBackground 10s infinite alternate;
+            }
 
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
+            @keyframes animateBackground {
+                0% {
+                    transform: scale(1);
+                }
+                100% {
+                    transform: scale(1.2);
+                }
+            }
 
-        .sidebar ul li {
-            margin-bottom: 10px;
-        }
+            .sidebar {
+                width: 200px;
+                background: linear-gradient(145deg, #34495e, #2c3e50); /* Темные синие оттенки */
+                color: #ecf0f1; /* Светло-серый текст */
+                padding: 20px;
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                left: 0;
+                box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+                z-index: 1000;
+                transition: transform 0.3s ease;
+            }
 
-        .sidebar a {
-            color: white;
-            text-decoration: none;
-            display: block;
-            padding: 10px;
-        }
+            .sidebar:hover {
+                transform: translateX(5px);
+            }
 
-        .sidebar a:hover {
-           background-color: #555;
-        }
+            .sidebar::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: -10px;
+                width: 10px;
+                height: 100%;
+                background: linear-gradient(145deg, #444, #333);
+            }
 
-        .content {
-            flex: 1;
-            padding: 20px;
-            margin-left: 200px; /* чтобы не закрывать sidebar */
-            background-color: white; /* цвет фона контента */
+            .sidebar .logo {
+                text-align: center;
+                margin-bottom: 30px;
+            }
 
-        }
-    </style>
+            .sidebar .logo img {
+                width: 80px;
+                height: auto;
+                border-radius: 50%;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            }
+
+            .sidebar ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .sidebar ul li {
+                margin-bottom: 15px;
+            }
+
+            .sidebar a {
+                color: #ecf0f1; /* Светло-серый текст */
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                padding: 12px;
+                border-radius: 5px;
+                transition: all 0.3s ease;
+                font-size: 16px;
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+            .sidebar a i {
+                margin-right: 10px;
+                font-size: 18px;
+            }
+
+            .sidebar a:hover {
+                background: rgba(255, 255, 255, 0.2);
+                transform: translateX(5px);
+                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .sidebar button {
+                background: rgba(255, 255, 255, 0.1);
+                border: none;
+                color: #ecf0f1; /* Светло-серый текст */
+                cursor: pointer;
+                padding: 12px;
+                width: 100%;
+                text-align: left;
+                font-size: 16px;
+                border-radius: 5px;
+                transition: all 0.3s ease;
+            }
+
+            .sidebar button:hover {
+                background: rgba(255, 255, 255, 0.2);
+                transform: translateX(5px);
+                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .content {
+                flex: 1;
+                padding: 40px;
+                margin-left: 230px;
+                background: rgba(52, 73, 94, 0.95); /* Темный синий с прозрачностью */
+                color: #ecf0f1; /* Светло-серый текст */
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                margin-top: 20px;
+                margin-right: 20px;
+                margin-bottom: 20px;
+                z-index: 1;
+                transition: transform 0.3s ease;
+            }
+
+            .content:hover {
+                transform: translateY(-5px);
+            }
+
+            h1 {
+                color: #ecf0f1; /* Светло-серый текст */
+                font-size: 2.5em;
+                margin-bottom: 20px;
+                position: relative;
+            }
+
+            h1::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 50px;
+                height: 4px;
+                background: linear-gradient(90deg, #007BFF, #00BFFF);
+                border-radius: 2px;
+            }
+
+            p {
+                line-height: 1.6;
+                font-size: 1.1em;
+            }
+
+            .content img {
+                max-width: 100%;
+                border-radius: 10px;
+                margin: 20px 0;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .download-button {
+                display: inline-block;
+                margin-left: auto;
+                padding: 12px 24px;
+                font-size: 16px;
+                font-weight: bold;
+                color: white;
+                background: linear-gradient(145deg, #007BFF, #0056b3);
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .download-button::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 300%;
+                height: 300%;
+                background: radial-gradient(circle, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 70%);
+                transform: translate(-50%, -50%) scale(0);
+                transition: transform 0.5s ease;
+            }
+
+            .download-button:hover::after {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            .download-button:hover {
+                background: linear-gradient(145deg, #0056b3, #004080);
+                transform: translateY(-2px);
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            }
+
+            .download-button:active {
+                transform: translateY(0);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+        </style>
 </head>
 <body>
     <div class="sidebar">

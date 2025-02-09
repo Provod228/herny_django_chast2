@@ -1,6 +1,136 @@
 {% extends "entrance_jornal.html" %}
 
 {% block content %}
+<style>
+    /* Общие стили */
+    body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background: linear-gradient(135deg, #1e3c72, #2e3192); /* Глубокий градиент от темно-синего до фиолетового */
+        color: #fff;
+        display: flex;
+        min-height: 100vh;
+        overflow-x: hidden;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    /* Стили для блока контента */
+    .content {
+        width: 100%;
+        max-width: 700px;
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: 0.3s;
+    }
+
+    /* Заголовок */
+    .content h1 {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #fff;
+    }
+
+    /* Стили для списка и элементов формы */
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    li {
+        margin-bottom: 20px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    /* Стили для формы */
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Стили для каждого поля формы */
+    input[type="text"],
+    input[type="file"],
+    textarea {
+        width: 80%;
+        padding: 12px;
+        margin: 10px 0;
+        border-radius: 8px;
+        border: 2px solid #3498db;
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    input[type="text"]:focus,
+    input[type="file"]:focus,
+    textarea:focus {
+        border-color: #2980b9;
+        background: rgba(255, 255, 255, 0.3);
+        outline: none;
+    }
+
+    /* Кнопка отправки формы */
+    input[type="submit"] {
+        padding: 12px 20px;
+        background: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: 500;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Эффект при наведении на кнопку */
+    input[type="submit"]:hover {
+        background: #2980b9;
+        transform: scale(1.05);
+    }
+
+    /* Эффект при активной кнопке */
+    input[type="submit"]:active {
+        background: #1c6691;
+        transform: scale(1);
+    }
+
+    /* Адаптивность */
+    @media (max-width: 768px) {
+        .content {
+            width: 90%;
+            padding: 20px;
+        }
+
+        input[type="text"],
+        input[type="file"],
+        textarea {
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+        }
+    }
+</style>
 <ul>
 <li><p>Нажмите кнопку 'Добавить' для добавления учебного материала</p></li>
 <li><form method="post" action="{% url 'jornal:educational_material_add' %}" enctype="multipart/form-data">

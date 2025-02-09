@@ -1,5 +1,96 @@
 {% extends "generic_log.html" %}
 {% block content %}
+<style>
+    /* Общие стили для страницы */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #d1e0e0, #f4f4f4); /* Более светлый фон */
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    /* Контейнер для форм */
+    .auth-container {
+        background: #ffffff; /* Белый фон */
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Легкая тень */
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+    }
+
+    /* Заголовок */
+    h1 {
+        color: #808080; /* Чуть темнее серый */
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    /* Стили для формы */
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Стили для полей ввода */
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+        padding: 10px;
+        border: 1px solid #ddd; /* Светлый серый */
+        border-radius: 5px;
+        font-size: 16px;
+        outline: none;
+        transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    input[type="email"]:focus {
+        border-color: #6ec1e4; /* Легкий голубой */
+    }
+
+    /* Стили для кнопок */
+    input[type="submit"] {
+        padding: 12px;
+        background: linear-gradient(145deg, #6ec1e4, #49a3c7); /* Светлый голубой градиент */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        background: linear-gradient(145deg, #49a3c7, #348fbb); /* Более темный голубой */
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="submit"]:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Стили для ссылок между формами */
+    .form-links {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .form-links input[type="submit"] {
+        flex: 1;
+    }
+</style>
     <h1>Регистрация</h1>
     <form method="post" action="{% url 'jornal:signup' %}">
             {% csrf_token %}
