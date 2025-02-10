@@ -150,14 +150,14 @@ urlpatterns = [
 ### Ручное тестирование
 1. Сайт исправно работает и запускается сразу
 	1. [Pasted image 20250210084542.png](https://github.com/Provod228/herny_django_chast2/blob/master/documentashion/file_image/Pasted%20image%2020250210084542.png)
-	2. [![[Pasted image 20250210084654.png]]](https://github.com/Provod228/herny_django_chast2/blob/master/documentashion/file_image/Pasted%20image%2020250210084654.png)
+	2. [[Pasted image 20250210084654.png](https://github.com/Provod228/herny_django_chast2/blob/master/documentashion/file_image/Pasted%20image%2020250210084654.png)
 2. Пользователь может зарегистрироваться и войти в систему с проверкой почты на валидность и хешируемым паролем
-	1. ![[Pasted image 20250210084755.png]]
-	2. ![[Pasted image 20250210084814.png]]
-	3. ![[Pasted image 20250210084830.png]]
+	1. [Pasted image 20250210084755.png](https://github.com/Provod228/herny_django_chast2/blob/master/documentashion/file_image/Pasted%20image%2020250210084755.png)
+	2. [Pasted image 20250210084814.png](https://github.com/Provod228/herny_django_chast2/blob/master/documentashion/file_image/Pasted%20image%2020250210084814.png)
+	3. [Pasted image 20250210084830.png](https://github.com/Provod228/herny_django_chast2/blob/master/documentashion/file_image/Pasted%20image%2020250210084830.png)
 3. Есть доступ к скачиванию файлов и удалению
-	1. ![[Pasted image 20250210084940.png]]
-	2. ![[Pasted image 20250210085012.png]]
+	1. [Pasted image 20250210084940.png](https://github.com/Provod228/herny_django_chast2/blob/master/documentashion/file_image/Pasted%20image%2020250210084940.png)
+	2. [Pasted image 20250210085012.png](https://github.com/Provod228/herny_django_chast2/blob/master/documentashion/file_image/Pasted%20image%2020250210085012.png)
 4. Работает добавление нового учебного материала
-	1. ![[Pasted image 20250210085123.png]]
-	2. ![[Pasted image 20250210085132.png]]
+	1. [Pasted image 20250210085123.png](https://github.com/Provod228/herny_django_chast2/blob/master/documentashion/file_image/Pasted%20image%2020250210085123.png)
+	2. [Pasted image 20250210085132.png](https://github.com/Provod228/herny_django_chast2/blob/master/documentashion/file_image/Pasted%20image%2020250210085132.png)
