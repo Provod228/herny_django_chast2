@@ -150,7 +150,7 @@ urlpatterns = [
 ### Ручное тестирование
 1. Сайт исправно работает и запускается сразу
 	1. [Pasted image 20250210084542.png](https://github.com/Provod228/herny_django_chast2/blob/master/documentashion/file_image/Pasted%20image%2020250210084542.png)
-	2. ![[Pasted image 20250210084654.png]]
+	2. [![[Pasted image 20250210084654.png]]](https://github.com/Provod228/herny_django_chast2/blob/master/documentashion/file_image/Pasted%20image%2020250210084654.png)
 2. Пользователь может зарегистрироваться и войти в систему с проверкой почты на валидность и хешируемым паролем
 	1. ![[Pasted image 20250210084755.png]]
 	2. ![[Pasted image 20250210084814.png]]
