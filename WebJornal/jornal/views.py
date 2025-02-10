@@ -43,7 +43,6 @@ class MainPageView(APIView):
 
     def get(self, request):
         educational_materials = EducationalMaterial.objects.all()
-        print(EducationalMaterialSerializer(educational_materials, many=True).data)
         return Response({
             "educational_materials": EducationalMaterialSerializer(educational_materials, many=True).data,
         })

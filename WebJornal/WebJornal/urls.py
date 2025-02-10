@@ -21,4 +21,5 @@ from jornal import views
 urlpatterns = [
     path('jornal/', include('jornal.urls')),
     path('admin/', admin.site.urls),
+    path('', views.MainPageView.as_view(), name='main-page'),
 ]
